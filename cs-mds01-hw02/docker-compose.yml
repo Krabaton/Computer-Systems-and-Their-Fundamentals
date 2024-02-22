@@ -1,0 +1,17 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:12
+    environment:
+      POSTGRES_DB: hw02
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 567234
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    ports:
+      - "80:8000"
+    depends_on:
+      - postgres
