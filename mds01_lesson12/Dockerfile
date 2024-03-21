@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.10
 
 ENV APP_HOME /app
 
@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8080
 
-CMD ["python", "main.py"]
+ENTRYPOINT ["python", "main.py"]
